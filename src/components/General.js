@@ -21,7 +21,7 @@ class General extends Component {
   }
 
   changeMode(e) {
-    const desiredMode = this.state.mode === "view" ? "edit" : "view"
+    const desiredMode = this.state.mode === "view" ? "edit" : "view";
     this.setState({
       mode: desiredMode,
       inputName: this.state.savedName,
@@ -36,29 +36,52 @@ class General extends Component {
       savedName: this.state.inputName,
       savedPhone: this.state.inputPhone,
       savedEmail: this.state.inputEmail,
-    })
-    this.changeMode()
+    });
+    this.changeMode();
   }
 
   handleChange(e) {
-    this.setState({[e.target.id]: e.target.value})
-  };
+    this.setState({ [e.target.id]: e.target.value });
+  }
 
   inputForm() {
     return (
       <form onSubmit={this.saveInputs}>
         <div>
-          <input type="text" id="inputName" placeholder="Name" value={this.state.inputName} onChange={this.handleChange} required />
+          <input
+            type="text"
+            id="inputName"
+            placeholder="Name"
+            value={this.state.inputName}
+            onChange={this.handleChange}
+            required
+          />
         </div>
         <div>
-          <input type="text" id="inputPhone" placeholder="Phone" value={this.state.inputPhone} onChange={this.handleChange} required />
+          <input
+            type="text"
+            id="inputPhone"
+            placeholder="Phone"
+            value={this.state.inputPhone}
+            onChange={this.handleChange}
+            required
+          />
         </div>
         <div>
-          <input type="email" id="inputEmail" placeholder="Email" value={this.state.inputEmail} onChange={this.handleChange} required />
+          <input
+            type="email"
+            id="inputEmail"
+            placeholder="Email"
+            value={this.state.inputEmail}
+            onChange={this.handleChange}
+            required
+          />
         </div>
         <div>
           <button type="submit">Save</button>
-          <button type="button" onClick={this.changeMode}>Cancel</button>
+          <button type="button" onClick={this.changeMode}>
+            Cancel
+          </button>
         </div>
       </form>
     );
@@ -74,7 +97,7 @@ class General extends Component {
           Edit
         </button>
       </div>
-    )
+    );
   }
 
   render() {
@@ -82,9 +105,9 @@ class General extends Component {
     let display;
 
     if (mode === "edit") {
-      display = this.inputForm()
+      display = this.inputForm();
     } else {
-      display = this.showInfo()
+      display = this.showInfo();
     }
 
     return display;
