@@ -26,3 +26,16 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.education-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.education-container > h2 {
+  margin: 0;
+  width: 100%;
+  text-align: start;
+}
