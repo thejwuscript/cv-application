@@ -9,15 +9,30 @@ class NewEducationForm extends Component {
       degree: '',
       date: '',
     }
+
+    this.packageFormData = this.packageFormData.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
     this.setState({ [e.target.id]: e.target.value });
   }
+
+  packageFormData(e) {
+    e.preventDefault();
+    let object = {
+      school: this.state.schoolName,
+      degree: this.state.degree,
+      date: this.state.date,
+    }
+    this.props.toggle()
+    //call the prop here and pass in object
+    this.props.saveInfo(object);
+  }
   
   render() {
     return (
-      <form action="">
+      <form onSubmit={this.packageFormData}>
         <div>
           <input
             type="text"
