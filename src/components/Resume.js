@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import General from "./General";
 import Education from "./Education";
+import "../styles/resume.css";
 
 class Resume extends Component {
   
   render() {
     return (
-      <form>
+      <div className="resume-container">
         <General />
         <hr />
         <Education />
         <hr />
-      </form>
+      </div>
     )
   };
 };
