@@ -19,6 +19,7 @@ class School extends Component {
 
     this.toggleMode = this.toggleMode.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.saveInfo = this.saveInfo.bind(this);
     //this.viewInfo = this.viewInfo.bind(this);
   }
 
@@ -52,8 +53,14 @@ class School extends Component {
     );
   }
 
-  saveInfo() {
-    this.setState({});
+  saveInfo(e) {
+    e.preventDefault();
+    this.setState({
+      mode: "view",
+      name: this.state.nameInput,
+      degree: this.state.degreeInput,
+      date: this.state.dateInput,
+    });
   }
 
   editInfo() {
