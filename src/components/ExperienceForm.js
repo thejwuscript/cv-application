@@ -31,7 +31,6 @@ class ExperienceForm extends Component {
     } else {
       this.props.saveInfo(object);
     }
-    
   }
 
   render() {
