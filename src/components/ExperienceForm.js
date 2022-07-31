@@ -26,7 +26,12 @@ class ExperienceForm extends Component {
     e.preventDefault();
     const object = this.state;
     this.props.toggle();
-    this.props.saveInfo(object);
+    if (this.props.editInfo) {
+      this.props.editInfo(object, this.props.index)
+    } else {
+      this.props.saveInfo(object);
+    }
+    
   }
 
   render() {

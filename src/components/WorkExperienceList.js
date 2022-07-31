@@ -6,8 +6,8 @@ class WorkExperienceList extends Component {
   render() {
     const jobs = this.props.jobs;
 
-    return jobs.map(job => {
-      return <Job key={uniqid()} job={job} saveInfo={this.props.saveInfo} />
+    return jobs.map((job, index) => {
+      return <Job key={uniqid()} job={job} editInfo={this.props.editInfo} index={index} />
     });
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ExperienceForm from './ExperienceForm';
+import ExperienceForm from "./ExperienceForm";
 
 class Job extends Component {
   constructor(props) {
@@ -37,12 +37,19 @@ class Job extends Component {
   }
 
   render() {
-    let display
+    let display;
 
     if (this.state.mode === "view") {
-      display = this.viewMode()
+      display = this.viewMode();
     } else {
-      display = <ExperienceForm job={this.props.job} toggle={this.toggleMode} saveInfo={this.props.saveInfo} />
+      display = (
+        <ExperienceForm
+          job={this.props.job}
+          toggle={this.toggleMode}
+          editInfo={this.props.editInfo}
+          index={this.props.index}
+        />
+      );
     }
 
     return display;

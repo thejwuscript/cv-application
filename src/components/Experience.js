@@ -14,12 +14,19 @@ class Experience extends Component {
 
     this.toggleMode = this.toggleMode.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.editList = this.editList.bind(this);
   }
 
   addToList(obj) {
     this.setState({
       experienceList: this.state.experienceList.concat(obj),
     })
+  }
+
+  editList(obj, index) {
+    let copyOfList = this.state.experienceList.slice();
+    copyOfList[index] = obj;
+    this.setState({ experienceList: copyOfList });
   }
 
   toggleMode() {
@@ -40,7 +47,7 @@ class Experience extends Component {
       
       <div className="experience-container">
         <h2>Work Experience</h2>
-        <WorkExperienceList jobs={this.state.experienceList} saveInfo={this.addToList} />
+        <WorkExperienceList jobs={this.state.experienceList} editInfo={this.editList} />
         {bottomElement}
       </div>
     )
