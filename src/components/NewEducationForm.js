@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import uniqid from 'uniqid';
 class NewEducationForm extends Component {
   constructor() {
     super();
@@ -21,12 +21,12 @@ class NewEducationForm extends Component {
   packageFormData(e) {
     e.preventDefault();
     let object = {
+      id: uniqid(),
       school: this.state.schoolName,
       degree: this.state.degree,
       date: this.state.date,
     }
     this.props.toggle()
-    //call the prop here and pass in object
     this.props.saveInfo(object);
   }
   

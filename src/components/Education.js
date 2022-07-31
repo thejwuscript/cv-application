@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AddButton from './AddButton';
 import NewEducationForm from "./NewEducationForm";
-
+import School from './School';
 class Education extends Component {
   constructor() {
     super();
@@ -29,20 +29,6 @@ class Education extends Component {
     })
   }
 
-  displayList() {
-    return (
-      this.state.educationList.map((item) => {
-        return (
-          <div>
-            <p>{item.school}</p>
-            <p>{item.degree}</p>
-            <p>{item.date}</p>
-          </div>
-        )
-      })
-    )
-  }
-
   render() {
     let bottomElement;
 
@@ -55,7 +41,7 @@ class Education extends Component {
     return (
       <div className="education-container">
         <h2>Education</h2>
-        {this.displayList()}
+        {this.state.educationList.map(item => <School key={item.id} schoolInfo={item} />)}
         {bottomElement}
       </div>
     );

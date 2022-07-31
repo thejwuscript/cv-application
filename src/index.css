@@ -17,6 +17,14 @@ code {
     monospace;
 }
 
+div {
+  width: 100%;
+}
+
+button {
+  width: 50px;
+}
+
 #root {
   width: 100%;
 }
@@ -29,13 +37,45 @@ code {
 
 .education-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
 .education-container > h2 {
   margin: 0;
   width: 100%;
+  text-align: start;
+}
+
+.school-top-container{
+  display: flex;
+}
+
+.school-name {
+  width: 80%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: start;
+}
+
+.school-container {
+  padding: 16px;
+  margin-left: -16px;
+}
+
+.school-container:hover {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.date-of-study {
+  width: 20%;
+  margin: 0;
+  text-align: end;
+}
+
+.degree {
+  margin: 0;
   text-align: start;
 }
