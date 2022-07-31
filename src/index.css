@@ -35,13 +35,15 @@ button {
   align-items: center;
 }
 
-.education-container {
+.education-container,
+.experience-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.education-container > h2 {
+.education-container > h2,
+.experience-container > h2 {
   margin: 0;
   width: 100%;
   text-align: start;
