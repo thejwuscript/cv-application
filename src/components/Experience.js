@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddButton from './AddButton';
 import ExperienceForm from './ExperienceForm';
+import WorkExperienceList from './WorkExperienceList';
 
 class Experience extends Component {
   constructor() {
@@ -16,7 +17,9 @@ class Experience extends Component {
   }
 
   addToList(obj) {
-    console.log(obj);
+    this.setState({
+      experienceList: this.state.experienceList.concat(obj),
+    })
   }
 
   toggleMode() {
@@ -37,6 +40,7 @@ class Experience extends Component {
       
       <div className="experience-container">
         <h2>Work Experience</h2>
+        <WorkExperienceList jobs={this.state.experienceList} />
         {bottomElement}
       </div>
     )
