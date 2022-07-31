@@ -33,14 +33,14 @@ class Experience extends Component {
     if (this.state.mode === "view") {
       bottomElement = <AddButton toggle={this.toggleMode} />
     } else {
-      bottomElement = <ExperienceForm toggle={this.toggleMode} saveInfo={this.addToList} />
+      bottomElement = <ExperienceForm toggle={this.toggleMode} saveInfo={this.addToList} job={{}} />
     }
 
     return (
       
       <div className="experience-container">
         <h2>Work Experience</h2>
-        <WorkExperienceList jobs={this.state.experienceList} />
+        <WorkExperienceList jobs={this.state.experienceList} saveInfo={this.addToList} />
         {bottomElement}
       </div>
     )

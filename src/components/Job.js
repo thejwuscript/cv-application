@@ -1,11 +1,28 @@
 import React, { Component } from "react";
+import ExperienceForm from './ExperienceForm';
 
 class Job extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      mode: "view",
+    };
+
+    this.toggleMode = this.toggleMode.bind(this);
+  }
+
+  toggleMode() {
+    let toggle = this.state.mode === "view" ? "edit" : "view";
+
+    this.setState({ mode: toggle });
+  }
+
+  viewMode() {
     const job = this.props.job;
 
     return (
-      <div className="job-container">
+      <div onClick={this.toggleMode} className="job-container">
         <div className="job-top-container">
           <p className="company-name">{job.companyName}</p>
           <p className="date-of-employment">{job.date}</p>
@@ -17,6 +34,18 @@ class Job extends Component {
         </ul>
       </div>
     );
+  }
+
+  render() {
+    let display
+
+    if (this.state.mode === "view") {
+      display = this.viewMode()
+    } else {
+      display = <ExperienceForm job={this.props.job} toggle={this.toggleMode} saveInfo={this.props.saveInfo} />
+    }
+
+    return display;
   }
 }
 

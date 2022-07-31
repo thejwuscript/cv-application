@@ -4,12 +4,14 @@ class ExperienceForm extends Component {
   constructor(props) {
     super(props);
 
+    const job = props.job;
+
     this.state = {
-      companyName: "",
-      position: "",
-      taskOne: "",
-      taskTwo: "",
-      date: "",
+      companyName: job.companyName || "",
+      position: job.position || "",
+      taskOne: job.taskOne || "",
+      taskTwo: job.taskTwo || "",
+      date: job.date || "",
     };
 
     this.handleChange = this.handleChange.bind(this);
